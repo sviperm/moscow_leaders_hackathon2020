@@ -130,3 +130,6 @@ dmypy.json
 
 # Jupyter
 .ipynb_checkpoints
+
+# Catboost
+catboost_info/
