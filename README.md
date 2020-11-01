@@ -43,9 +43,9 @@ $ python scripts/generate_model.py -i 10 -t 0.7
 $ python scripts/fill_secret_table.py "cb_mae-0.5818.cbm, cb_mae-0.6182_.cbm, cb_mae-0.6182.cbm, cb_mae-0.6364.cbm, cb_mae-0.6389.cbm"
 ```
 ## Research
-### Нами были предложены и реализованы следующие идеи:
+### Нами были реализованы следующие идеи:
 1. Использовать метрики для оценки сегментации медицинских изображений из
-   [Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool] (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4533825/).
+   [Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4533825/).
 2. Выяснить корреляцию между заключением врача (выраженное числом от 1 до 5) и
    значениями рассчитанных метрик (использовался коэффициент ранговой
    корреляции Кендалла, как наиболее устойчивый к случайным вбросам,
@@ -55,6 +55,8 @@ $ python scripts/fill_secret_table.py "cb_mae-0.5818.cbm, cb_mae-0.6182_.cbm, cb
    ранжирование метрик и отобраны наиболее оптимальные их них.
 4. Отобранные метрики были использованы для построения следующих моделей:
     * [Cat Boost Regressor](https://catboost.ai/docs/concepts/python-reference_catboostregressor.html)
+      Тестировались разные наборы гипер-параметров, что не улучшило качество работы алгоритма.
+      Поэтому было принято решение об использовании дефолтных параметров.
     * [Linear Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
     * [Random Forest Regressor](https://scikit-learn.org/stable/search.html?q=random+forest)
     * [K Neighbors Regressor](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html?highlight=kneighborsregressor#sklearn.neighbors.KNeighborsRegressor)
@@ -67,6 +69,11 @@ $ python scripts/fill_secret_table.py "cb_mae-0.5818.cbm, cb_mae-0.6182_.cbm, cb
    ошибки -- Categorical Crossentropy.
    [Применялась простая архитектура](https://keras.io/examples/vision/mnist_convnet/) т.к данных для вычисления большого количества параметров не хватило.
 
-# О нас
+### Итог
+Критериями выбора модели служили метрика Mean absolute error на открытой выборке (OpenPart) и ручной анализ.
+Ручной анализ выполнялся следующим образом:
+    * выступая в роли врача сравнивали на закрытой выборке (SecretPart) маски, размеченные ИИ и маски, размеченные экспертом;
+    * сравнивали наше мнение со значением, вычисленным предложенным алгоритмом;
 
-Мы команда кибер-медиков
+# О нас
+Мы команда врачей-кибернетиков.
