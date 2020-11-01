@@ -133,3 +133,6 @@ dmypy.json
 
 # Catboost
 catboost_info/
+
+# IDE
+*.code-workspace
