@@ -46,7 +46,7 @@ $ python scripts/fill_secret_table_cb.py "cb_mae-0.5818.cbm, cb_mae-0.6182_.cbm,
 ```
 
 ## Submission
-Заполненная таблица (SecretPart) находится в submissions/SecretPart_Кибер-медики_cb.csv
+Заполненная таблица (SecretPart) находится в [**submissions/SecretPart_Кибер-медики_cb.csv**](https://github.com/sviperm/moscow_leaders_hackathon2020/tree/master/submissions)
 
 ## Research
 ### Нами были реализованы следующие идеи:
