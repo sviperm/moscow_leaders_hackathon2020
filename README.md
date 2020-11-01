@@ -3,6 +3,8 @@
 ## Установка
 ### Локально
 ```
+$ sudo apt-get update
+$ sudo apt-get install -y libinsighttoolkit4-dev
 $ python -m venv venv
 $ source venv/bin/activate
 $ pip install -U pip
