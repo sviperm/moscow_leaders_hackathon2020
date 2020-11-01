@@ -44,6 +44,10 @@ $ python scripts/generate_catboost_model.py -i 10 -t 0.7
 ```
 $ python scripts/fill_secret_table_cb.py "cb_mae-0.5818.cbm, cb_mae-0.6182_.cbm, cb_mae-0.6182.cbm, cb_mae-0.6364.cbm, cb_mae-0.6389.cbm"
 ```
+
+## Submission
+Заполненная таблица (SecretPart) находится в submissions/SecretPart_Кибер-медики_cb.csv
+
 ## Research
 ### Нами были реализованы следующие идеи:
 1. Использовать метрики для оценки сегментации медицинских изображений из
