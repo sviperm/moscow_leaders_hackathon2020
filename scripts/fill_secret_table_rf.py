@@ -7,7 +7,7 @@ import plac
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..',))
 sys.path.insert(0, ROOT)
 
-from scripts.predict import get_models_by_names, predict  # nopep8
+from scripts.random_forest_predict import get_models_by_names, predict, calculate_metrics  # nopep8
 
 
 def fill_row(models):
@@ -19,8 +19,11 @@ def fill_row(models):
         sample3_path = os.path.join(ROOT, 'dataset', 'sample_3', f'{img_code}_s3.png')
 
         for i, sample_path in enumerate([sample1_path, sample2_path, sample3_path]):
-            pred = predict(models, expert_path, sample_path)
+            metrics = dict(calculate_metrics(expert_path, sample_path))
+            pred = predict(models, expert_path, sample_path, metrics)
             row[i + 1] = pred
+
+        print(1)
         return row
     return fun
 
@@ -35,9 +38,10 @@ def main(models_names):
     table = pd.read_csv(table_path)
     table = table.apply(fill_row(models), axis=1)
 
-    save_path = os.path.join(ROOT, 'submissions', 'SecretPart_Кибер-медики.csv')
+    save_path = os.path.join(ROOT, 'submissions', 'SecretPart_Кибер-медики_rf.csv')
     table.to_csv(save_path, index=False)
 
 
 if __name__ == "__main__":
     plac.call(main)
+    # main('rf_2m-0.557.cbm, rf_2m-0.531.cbm, rf_2m-0.556.cbm, rf_2m-0.529.cbm, rf_2m-0.532.cbm')
