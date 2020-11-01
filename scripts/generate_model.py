@@ -8,9 +8,7 @@ from catboost.utils import eval_metric
 from sklearn.model_selection import train_test_split
 from tqdm import tqdm
 
-ROOT = os.path.abspath(os.path.join(
-    os.path.dirname(__file__), '..',
-))
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..',))
 
 
 def train(features, iterations=100, train_size=0.7):
