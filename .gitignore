@@ -135,4 +135,5 @@ dmypy.json
 catboost_info/
 
 # IDE
+.vscode/
 *.code-workspace
