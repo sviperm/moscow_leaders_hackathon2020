@@ -51,7 +51,7 @@ $ python scripts/fill_secret_table_cb.py "cb_mae-0.5818.cbm, cb_mae-0.6182_.cbm,
 ## Research
 ### Нами были реализованы следующие идеи:
 1. Использовать метрики для оценки сегментации медицинских изображений из
-   [Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4533825/).
+   [Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4533825/). Инструмент для расчета метрик можно найти по [ссылке](https://github.com/Visceral-Project/EvaluateSegmentation).
 2. Выяснить корреляцию между заключением врача (выраженное числом от 1 до 5) и
    значениями рассчитанных метрик (использовался коэффициент ранговой
    корреляции Кендалла, как наиболее устойчивый к случайным вбросам,
