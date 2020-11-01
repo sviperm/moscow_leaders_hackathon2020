@@ -54,8 +54,7 @@ $ python scripts/fill_secret_table.py "cb_mae-0.5818.cbm, cb_mae-0.6182_.cbm, cb
 3. На основании коэффециента корреляции для каждой метрки, было произведено
    ранжирование метрик и отобраны наиболее оптимальные их них.
 4. Отобранные метрики были использованы для построения следующих моделей:
-    * [Cat Boost Regressor](https://catboost.ai/docs/concepts/python-reference_catboostregressor.html)
-      Тестировались разные наборы гипер-параметров, что не улучшило качество работы алгоритма.
+    * [Cat Boost Regressor](https://catboost.ai/docs/concepts/python-reference_catboostregressor.html) - тестировались разные наборы гипер-параметров, что не улучшило качество работы  алгоритма.
       Поэтому было принято решение об использовании дефолтных параметров.
     * [Linear Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
     * [Random Forest Regressor](https://scikit-learn.org/stable/search.html?q=random+forest)
@@ -69,7 +68,7 @@ $ python scripts/fill_secret_table.py "cb_mae-0.5818.cbm, cb_mae-0.6182_.cbm, cb
    ошибки -- Categorical Crossentropy.
    [Применялась простая архитектура](https://keras.io/examples/vision/mnist_convnet/) т.к данных для вычисления большого количества параметров не хватило.
 
-### Итог
+## Итог
 Критериями выбора модели служили метрика Mean absolute error на открытой выборке (OpenPart) и ручной анализ.
 Ручной анализ выполнялся следующим образом:
     * выступая в роли врача сравнивали на закрытой выборке (SecretPart) маски, размеченные ИИ и маски, размеченные экспертом;
