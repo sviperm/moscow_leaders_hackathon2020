@@ -91,6 +91,7 @@ def main(expert_path, sample_path, models_names):
     models = get_models_by_names(models_names)
     pred = predict(models, expert_path, sample_path)
     print(f"Result: {pred}")
+    return pred
 
 
 if __name__ == "__main__":
